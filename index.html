@@ -112,7 +112,6 @@
         <section id="buy">
             <h2 id="buyTitle">How to Buy Chlenix</h2>
             <p id="buyText">Chlenix Token is available for purchase on various decentralized exchanges (DEXs) in the BNB (Bep20) network. Possibly, the token will be traded on major exchanges such as Binance, Bybit, HTX, Mexc, OKX, Kucoin, and others. Token contract address: 0xA71Fc85908555B515CDCaB1a5602848515bdb3c5 in the BNB Smart Chain (Bep20) network.</p>
-            <button onclick="addToMetamask()">Add to Metamask</button>
         </section>
     </div>
     <footer>
@@ -126,41 +125,6 @@
     </footer>
 
     <script>
-        async function addToMetamask() {
-            const tokenAddress = "0xA71Fc85908555B515CDCaB1a5602848515bdb3c5";
-            const tokenSymbol = "xyi";
-            const tokenDecimals = 18;
-            const tokenImage = "https://xyichlenix.lol/favicon.png";
-
-            try {
-                // 'wasAdded' is a boolean. Like any RPC method, an error can be thrown.
-                const wasAdded = await window.ethereum.request({
-                    method: "wallet_watchAsset",
-                    params: {
-                        type: "BEP20",
-                        options: {
-                            // The address of the token.
-                            address: tokenAddress,
-                            // A ticker symbol or shorthand, up to 5 characters.
-                            symbol: tokenSymbol,
-                            // The number of decimals in the token.
-                            decimals: tokenDecimals,
-                            // A string URL of the token logo.
-                            image: tokenImage,
-                        },
-                    },
-                });
-
-                if (wasAdded) {
-                    console.log("Thanks for your interest!");
-                } else {
-                    console.log("Your loss!");
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
         function changeLanguage() {
             var lang = document.getElementById("langSelector").value;
             if (lang === "ru") {
