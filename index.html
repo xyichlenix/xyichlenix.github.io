@@ -3,23 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PEPE Token</title>
+    <title>Chlenix Token</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         /* Ваши стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        header {
+            background-color: #ffec80;
+            color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #fff6bf;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #000;
+            text-decoration: none;
+            padding: 0 20px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        section {
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        h2 {
+            color: #ff7846;
+        }
+        p {
+            color: #666;
+        }
+        footer {
+            background-color: #ffec80;
+            color: #000;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-icons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .social-icons img {
+            width: 30px;
+            height: auto;
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>PEPE Token</h1>
-        <!-- Выбор языка -->
-        <div id="language-selection">
-            <select id="language-selector">
-                <option value="en">English</option>
-                <option value="ru">Russian</option>
-            </select>
-        </div>
-        <!-- Меню навигации -->
+        <h1>Chlenix Token</h1>
         <nav>
             <a href="#about">About</a>
             <a href="#tokenomics">Tokenomics</a>
@@ -28,27 +82,30 @@
     </header>
     <div class="container">
         <section id="about">
-            <h2>About PEPE Token</h2>
-            <!-- Текст на английском -->
-            <p class="en">PEPE Token is a decentralized digital currency based on the popular internet meme Pepe the Frog. It aims to provide a fun and engaging way for users to interact with the blockchain.</p>
-            <!-- Текст на русском -->
-            <p class="ru" style="display:none;">Токен PEPE - это децентрализованная цифровая валюта, основанная на популярном интернет-меме Pepe the Frog. Он призван предоставить пользователям интересный и захватывающий способ взаимодействия с блокчейном.</p>
+            <h2>About Chlenix Token</h2>
+            <p>Chlenix Token is a decentralized digital currency based on the concept of Chlenix. It aims to provide a fun and engaging way for users to interact with the blockchain.</p>
         </section>
-        <!-- Другие разделы с текстом на обоих языках -->
+        <section id="tokenomics">
+            <h2>Tokenomics</h2>
+            <ul>
+                <li>Total Supply: 1,000,000 Chlenix ($XYI)</li>
+                <li>Symbol: XYI</li>
+                <li>Decimals: 18</li>
+            </ul>
+        </section>
+        <section id="buy">
+            <h2>How to Buy Chlenix</h2>
+            <p>Chlenix Token is available for purchase on various decentralized exchanges (DEXs) and can be traded using popular cryptocurrencies such as Ethereum (ETH).</p>
+        </section>
     </div>
-    <!-- Ваши скрипты -->
-    <script>
-        document.getElementById('language-selector').addEventListener('change', function() {
-            var selectedLanguage = this.value;
-            var elements = document.querySelectorAll('[class*="lang-"]');
-            elements.forEach(function(element) {
-                element.style.display = 'none';
-            });
-            var selectedElements = document.querySelectorAll('.lang-' + selectedLanguage);
-            selectedElements.forEach(function(element) {
-                element.style.display = 'block';
-            });
-        });
-    </script>
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/"><img src="tiktok.png" alt="TikTok"></a>
+            <a href="https://telegram.org/"><img src="telegram.png" alt="Telegram"></a>
+            <a href="#"><img src="x.png" alt="X"></a>
+            <a href="https://www.instagram.com/"><img src="instagram.png" alt="Instagram"></a>
+        </div>
+        <p>&copy; 2024 Chlenix Token. All rights reserved.</p>
+    </footer>
 </body>
 </html>
