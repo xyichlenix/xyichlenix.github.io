@@ -18,6 +18,20 @@
             color: #000;
             padding: 20px;
             text-align: center;
+            position: relative; /* Добавлено */
+        }
+        .left-image, .right-image { /* Добавлено */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px; /* Увеличено изображение в 3 раза */
+            height: auto;
+        }
+        .left-image { /* Добавлено */
+            left: 10px;
+        }
+        .right-image { /* Добавлено */
+            right: 10px;
         }
         nav {
             background-color: #fff6bf;
@@ -73,7 +87,9 @@
 </head>
 <body>
     <header>
+        <img src="left-image.png" alt="Left Image" class="left-image"> <!-- Добавлено -->
         <h1>Chlenix Token</h1>
+        <img src="right-image.png" alt="Right Image" class="right-image"> <!-- Добавлено -->
         <nav>
             <a href="#about">About</a>
             <a href="#tokenomics">Tokenomics</a>
