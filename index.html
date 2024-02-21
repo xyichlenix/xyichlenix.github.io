@@ -4,113 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEPE Token</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('pepe_background.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            animation: pulseBackground 10s infinite alternate;
-        }
-        @keyframes pulseBackground {
-            0% {
-                background-color: rgba(0, 0, 0, 0.5);
-            }
-            100% {
-                background-color: rgba(0, 0, 0, 0.3);
-            }
-        }
-        header {
-            background-color: rgba(0, 100, 0, 0.7);
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            animation: slideInFromTop 1s ease-out;
-        }
-        @keyframes slideInFromTop {
-            0% {
-                transform: translateY(-100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 10px;
-        }
-        section {
-            padding: 20px 0;
-            border-bottom: 1px solid #ccc;
-        }
-        h2 {
-            color: #006400;
-            animation: fadeIn 1s ease-out;
-        }
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        p {
-            color: #666;
-            animation: slideInFromLeft 1s ease-out;
-        }
-        @keyframes slideInFromLeft {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-        footer {
-            background-color: rgba(0, 100, 0, 0.7);
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            animation: slideInFromBottom 1s ease-out;
-        }
-        @keyframes slideInFromBottom {
-            0% {
-                transform: translateY(100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-        nav {
-            background-color: #006400;
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0 20px;
-            font-size: 18px;
-        }
-        nav a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-        }
+        /* Ваши стили */
     </style>
 </head>
 <body>
     <header>
         <h1>PEPE Token</h1>
+        <!-- Выбор языка -->
+        <div id="language-selection">
+            <select id="language-selector">
+                <option value="en">English</option>
+                <option value="ru">Russian</option>
+            </select>
+        </div>
+        <!-- Меню навигации -->
         <nav>
             <a href="#about">About</a>
             <a href="#tokenomics">Tokenomics</a>
@@ -120,23 +29,26 @@
     <div class="container">
         <section id="about">
             <h2>About PEPE Token</h2>
-            <p>PEPE Token is a decentralized digital currency based on the popular internet meme Pepe the Frog. It aims to provide a fun and engaging way for users to interact with the blockchain.</p>
+            <!-- Текст на английском -->
+            <p class="en">PEPE Token is a decentralized digital currency based on the popular internet meme Pepe the Frog. It aims to provide a fun and engaging way for users to interact with the blockchain.</p>
+            <!-- Текст на русском -->
+            <p class="ru" style="display:none;">Токен PEPE - это децентрализованная цифровая валюта, основанная на популярном интернет-меме Pepe the Frog. Он призван предоставить пользователям интересный и захватывающий способ взаимодействия с блокчейном.</p>
         </section>
-        <section id="tokenomics">
-            <h2>Tokenomics</h2>
-            <ul>
-                <li>Total Supply: 10,000,000 PEPE</li>
-                <li>Symbol: PEPE</li>
-                <li>Decimals: 18</li>
-            </ul>
-        </section>
-        <section id="buy">
-            <h2>How to Buy PEPE</h2>
-            <p>PEPE Token is available for purchase on various decentralized exchanges (DEXs) and can be traded using popular cryptocurrencies such as Ethereum (ETH).</p>
-        </section>
+        <!-- Другие разделы с текстом на обоих языках -->
     </div>
-    <footer>
-        <p>&copy; 2024 PEPE Token. All rights reserved.</p>
-    </footer>
+    <!-- Ваши скрипты -->
+    <script>
+        document.getElementById('language-selector').addEventListener('change', function() {
+            var selectedLanguage = this.value;
+            var elements = document.querySelectorAll('[class*="lang-"]');
+            elements.forEach(function(element) {
+                element.style.display = 'none';
+            });
+            var selectedElements = document.querySelectorAll('.lang-' + selectedLanguage);
+            selectedElements.forEach(function(element) {
+                element.style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
