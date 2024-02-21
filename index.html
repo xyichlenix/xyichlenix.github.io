@@ -94,24 +94,28 @@
             <a href="#about">About</a>
             <a href="#tokenomics">Tokenomics</a>
             <a href="#buy">How to Buy</a>
+            <select id="langSelector" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+            </select>
         </nav>
     </header>
     <div class="container">
         <section id="about">
             <h2>About Chlenix Token</h2>
-            <p>Chlenix Token is a decentralized digital currency based on the concept of Chlenix. It aims to provide a fun and engaging way for users to interact with the blockchain.</p>
+            <p id="aboutText">Chlenix Token is a decentralized digital currency based on the concept of Chlenix. It aims to provide a fun and engaging way for users to interact with the blockchain.</p>
         </section>
         <section id="tokenomics">
             <h2>Tokenomics</h2>
             <ul>
-                <li>Total Supply: 1,000,000,000 Chlenix ($XYI)</li>
-                <li>Symbol: XYI</li>
-                <li>Decimals: 18</li>
+                <li id="totalSupply">Total Supply: 1,000,000,000 Chlenix ($XYI)</li>
+                <li id="symbol">Symbol: XYI</li>
+                <li id="decimals">Decimals: 18</li>
             </ul>
         </section>
         <section id="buy">
             <h2>How to Buy Chlenix</h2>
-            <p>Chlenix Token is available for purchase on various decentralized exchanges (DEXs) and can be traded using popular cryptocurrencies such as BNB (Bep20).</p>
+            <p id="buyText">Chlenix Token is available for purchase on various decentralized exchanges (DEXs) and can be traded using popular cryptocurrencies such as BNB (Bep20).</p>
         </section>
     </div>
     <footer>
@@ -123,5 +127,24 @@
         </div>
         <p>&copy; 2024 Chlenix Token. All rights reserved.</p>
     </footer>
+
+    <script>
+        function changeLanguage() {
+            var lang = document.getElementById("langSelector").value;
+            if (lang === "ru") {
+                document.getElementById("aboutText").innerText = "Токен Chlenix - это децентрализованная цифровая валюта, основанная на концепции Chlenix. Он стремится предоставить пользователям увлекательный и интересный способ взаимодействия с блокчейном.";
+                document.getElementById("totalSupply").innerText = "Общее количество: 1 000 000 000 Chlenix ($XYI)";
+                document.getElementById("symbol").innerText = "Символ: XYI";
+                document.getElementById("decimals").innerText = "Десятичные разряды: 18";
+                document.getElementById("buyText").innerText = "Токен Chlenix доступен для покупки на различных децентрализованных биржах (DEX) и может быть торгуем на популярных криптовалютных биржах, таких как BNB (Bep20).";
+            } else {
+                document.getElementById("aboutText").innerText = "Chlenix Token is a decentralized digital currency based on the concept of Chlenix. It aims to provide a fun and engaging way for users to interact with the blockchain.";
+                document.getElementById("totalSupply").innerText = "Total Supply: 1,000,000,000 Chlenix ($XYI)";
+                document.getElementById("symbol").innerText = "Symbol: XYI";
+                document.getElementById("decimals").innerText = "Decimals: 18";
+                document.getElementById("buyText").innerText = "Chlenix Token is available for purchase on various decentralized exchanges (DEXs) and can be traded using popular cryptocurrencies such as BNB (Bep20).";
+            }
+        }
+    </script>
 </body>
 </html>
