@@ -38,15 +38,11 @@
             text-align: center;
             padding: 10px 0;
         }
-        nav a {
-            color: #000;
-            text-decoration: none;
-            padding: 0 20px;
-            font-size: 18px;
-        }
-        nav a:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+        nav select {
+            border: none;
+            background-color: transparent;
+            font-size: 16px;
+            cursor: pointer;
         }
         .container {
             max-width: 800px;
@@ -70,8 +66,7 @@
             color: #000;
             text-align: center;
             padding: 20px;
-            position: fixed;
-            bottom: 0;
+            /* Убрана фиксированная позиция */
             width: 100%;
         }
         .social-icons {
@@ -91,9 +86,6 @@
         <h1>Chlenix Token</h1>
         <img src="right-image.png" alt="Right Image" class="right-image"> <!-- Добавлено -->
         <nav>
-            <a href="#about">About</a>
-            <a href="#tokenomics">Tokenomics</a>
-            <a href="#buy">How to Buy</a>
             <select id="langSelector" onchange="changeLanguage()">
                 <option value="en">English</option>
                 <option value="ru">Русский</option>
@@ -102,28 +94,32 @@
     </header>
     <div class="container">
         <section id="about">
-            <h2>About Chlenix Token</h2>
+            <h2 id="aboutTitle">About Chlenix Token</h2>
             <p id="aboutText">Chlenix Token is a decentralized digital currency based on the concept of Chlenix. It aims to provide a fun and engaging way for users to interact with the blockchain.</p>
         </section>
         <section id="tokenomics">
-            <h2>Tokenomics</h2>
+            <h2 id="tokenomicsTitle">Tokenomics</h2>
             <ul>
                 <li id="totalSupply">Total Supply: 1,000,000,000 Chlenix ($XYI)</li>
                 <li id="symbol">Symbol: XYI</li>
                 <li id="decimals">Decimals: 18</li>
             </ul>
         </section>
+        <section id="rewards">
+            <h2 id="rewardsTitle">Rewards for Every Action</h2>
+            <p id="rewardsText">Every interaction with Chlenix accounts is rewarded. Subscribe to our TikTok, Instagram, X, and Telegram accounts, repost, like, and participate in token giveaways. Generate photo and video content featuring the Chlenix character with tags of our account and token and participate in the super-token giveaway.</p>
+        </section>
         <section id="buy">
-            <h2>How to Buy Chlenix</h2>
-            <p id="buyText">Chlenix Token is available for purchase on various decentralized exchanges (DEXs) and can be traded using popular cryptocurrencies such as BNB (Bep20).</p>
+            <h2 id="buyTitle">How to Buy Chlenix</h2>
+            <p id="buyText">Chlenix Token is available for purchase on various decentralized exchanges (DEXs) in the BNB (Bep20) network. Possibly, the token will be traded on major exchanges such as Binance, Bybit, HTX, Mexc, OKX, Kucoin, and others. Token contract address: 0xA71Fc85908555B515CDCaB1a5602848515bdb3c5 in the BNB Smart Chain (Bep20) network.</p>
         </section>
     </div>
     <footer>
         <div class="social-icons">
-            <a href="https://www.tiktok.com/@chlenix.xyi"><img src="tiktok.png" alt="TikTok"></a>
-            <a href="https://t.me/xyichlenix"><img src="telegram.png" alt="Telegram"></a>
-            <a href="https://x.com/xyichlenix"><img src="x.png" alt="X"></a>
-            <a href="https://www.instagram.com/chlenix.xyi"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/"><img src="tiktok.png" alt="TikTok"></a>
+            <a href="https://telegram.org/"><img src="telegram.png" alt="Telegram"></a>
+            <a href="#"><img src="x.png" alt="X"></a>
+            <a href="https://www.instagram.com/"><img src="instagram.png" alt="Instagram"></a>
         </div>
         <p>&copy; 2024 Chlenix Token. All rights reserved.</p>
     </footer>
@@ -132,17 +128,27 @@
         function changeLanguage() {
             var lang = document.getElementById("langSelector").value;
             if (lang === "ru") {
+                document.getElementById("aboutTitle").innerText = "О токене Chlenix";
                 document.getElementById("aboutText").innerText = "Токен Chlenix - это децентрализованная цифровая валюта, основанная на концепции Chlenix. Он стремится предоставить пользователям увлекательный и интересный способ взаимодействия с блокчейном.";
+                document.getElementById("tokenomicsTitle").innerText = "Токеномика";
                 document.getElementById("totalSupply").innerText = "Общее количество: 1 000 000 000 Chlenix ($XYI)";
                 document.getElementById("symbol").innerText = "Символ: XYI";
                 document.getElementById("decimals").innerText = "Десятичные разряды: 18";
-                document.getElementById("buyText").innerText = "Токен Chlenix доступен для покупки на различных децентрализованных биржах (DEX) и может быть торгуем на популярных криптовалютных биржах, таких как BNB (Bep20).";
+                document.getElementById("rewardsTitle").innerText = "Каждое действие Вознаграждается";
+                document.getElementById("rewardsText").innerText = "Каждое взаимодействие с аккаунтами Chlenix вознаграждается. Подписывайтесь на наши аккаунты TikTok, Instagram, X и Telegram, делайте репосты, ставьте лайки и участвуйте в раздаче токенов. Генерируйте фото и видео контент с участием персонажа Chlenix с отметками нашего аккаунта и токена и участвуйте в супер - раздаче токенов.";
+                document.getElementById("buyTitle").innerText = "Как купить Chlenix";
+                document.getElementById("buyText").innerText = "Токен Chlenix доступен для покупки на различных децентрализованных биржах (DEX) в сети BNB (Bep20). Возможно токен когда - то будет торговаться на крупных биржах, таких, как Binance, Bybit, HTX, Mexc, OKX, Kucoin и другие. Адрес контракта токена: 0xA71Fc85908555B515CDCaB1a5602848515bdb3c5 сеть BNB Smart Chain (Bep20)";
             } else {
+                document.getElementById("aboutTitle").innerText = "About Chlenix Token";
                 document.getElementById("aboutText").innerText = "Chlenix Token is a decentralized digital currency based on the concept of Chlenix. It aims to provide a fun and engaging way for users to interact with the blockchain.";
+                document.getElementById("tokenomicsTitle").innerText = "Tokenomics";
                 document.getElementById("totalSupply").innerText = "Total Supply: 1,000,000,000 Chlenix ($XYI)";
                 document.getElementById("symbol").innerText = "Symbol: XYI";
                 document.getElementById("decimals").innerText = "Decimals: 18";
-                document.getElementById("buyText").innerText = "Chlenix Token is available for purchase on various decentralized exchanges (DEXs) and can be traded using popular cryptocurrencies such as BNB (Bep20).";
+                document.getElementById("rewardsTitle").innerText = "Rewards for Every Action";
+                document.getElementById("rewardsText").innerText = "Every interaction with Chlenix accounts is rewarded. Subscribe to our TikTok, Instagram, X, and Telegram accounts, repost, like, and participate in token giveaways. Generate photo and video content featuring the Chlenix character with tags of our account and token and participate in the super-token giveaway.";
+                document.getElementById("buyTitle").innerText = "How to Buy Chlenix";
+                document.getElementById("buyText").innerText = "Chlenix Token is available for purchase on various decentralized exchanges (DEXs) in the BNB (Bep20) network. Possibly, the token will be traded on major exchanges such as Binance, Bybit, HTX, Mexc, OKX, Kucoin, and others. Token contract address: 0xA71Fc85908555B515CDCaB1a5602848515bdb3c5 in the BNB Smart Chain (Bep20) network.";
             }
         }
     </script>
