@@ -16,7 +16,7 @@
         header {
             background-color: #ffec80;
             color: #000;
-            padding: 20px;
+            padding: 5vw; /* Отступы зависят от ширины экрана */
             text-align: center;
             position: relative;
         }
@@ -24,82 +24,84 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 300px;
+            width: 15vw; /* Ширина зависит от ширины экрана */
             height: auto;
         }
         .left-image {
-            left: 10px;
+            left: 5vw; /* Отступ от левого края зависит от ширины экрана */
         }
         .right-image {
-            right: 10px;
+            right: 5vw; /* Отступ от правого края зависит от ширины экрана */
         }
         nav {
             background-color: #fff6bf;
             text-align: center;
-            padding: 10px 0;
+            padding: 2vw 0; /* Отступы зависят от ширины экрана */
         }
         nav select {
             border: none;
             background-color: transparent;
-            font-size: 16px;
+            font-size: 4vw; /* Размер шрифта зависит от ширины экрана */
             cursor: pointer;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
+            max-width: 80vw; /* Максимальная ширина контейнера зависит от ширины экрана */
+            margin: 5vh auto; /* Отступы от верхнего и нижнего края зависят от высоты экрана */
+            padding: 0 5vw; /* Внутренние отступы зависят от ширины экрана */
             background-color: #fff;
-            border-radius: 10px;
+            border-radius: 5vw; /* Радиус скругления углов зависит от ширины экрана */
         }
         section {
-            padding: 20px 0;
-            border-bottom: 1px solid #ccc;
+            padding: 5vw 0; /* Отступы зависят от ширины экрана */
+            border-bottom: 0.5vw solid #ccc; /* Толщина границы зависит от ширины экрана */
         }
         h2 {
+            font-size: 5vw; /* Размер заголовка зависит от ширины экрана */
             color: #ff7846;
         }
         p {
+            font-size: 4vw; /* Размер текста зависит от ширины экрана */
             color: #666;
         }
         footer {
             background-color: #ffec80;
             color: #000;
             text-align: center;
-            padding: 20px;
+            padding: 5vw;
             width: 100%;
         }
         .social-icons {
-            margin-top: 20px;
+            margin-top: 5vw; /* Отступ сверху зависит от ширины экрана */
             text-align: center;
         }
         .social-icons img {
-            width: 30px;
+            width: 10vw; /* Размер иконок зависит от ширины экрана */
             height: auto;
-            margin: 0 10px;
+            margin: 0 2.5vw; /* Отступы между иконками зависят от ширины экрана */
         }
 
-        /* Медиа-запрос для мобильных устройств */
-        @media screen and (max-width: 600px) {
-            .left-image, .right-image {
-                display: none; /* Скрываем изображения на маленьких экранах */
-            }
+        /* Медиа-запросы для адаптивности на различных устройствах */
+        @media screen and (max-width: 768px) {
             header {
-                padding: 10px; /* Уменьшаем отступы */
+                padding: 10px; /* Изменяем отступы для маленьких экранов */
             }
             nav select {
-                font-size: 14px; /* Уменьшаем размер шрифта в навигационном меню */
+                font-size: 14px; /* Изменяем размер шрифта для маленьких экранов */
             }
             .container {
-                padding: 0 10px; /* Уменьшаем внутренние отступы контейнера */
+                max-width: 90vw; /* Изменяем максимальную ширину контейнера для маленьких экранов */
+                margin: 5vh auto; /* Изменяем отступы от верхнего и нижнего края для маленьких экранов */
+                border-radius: 3vw; /* Изменяем радиус скругления углов для маленьких экранов */
             }
             h2 {
-                font-size: 18px; /* Уменьшаем размер заголовков */
+                font-size: 6vw; /* Изменяем размер заголовка для маленьких экранов */
             }
             p {
-                font-size: 14px; /* Уменьшаем размер текста */
+                font-size: 5vw; /* Изменяем размер текста для маленьких экранов */
             }
             .social-icons img {
-                width: 20px; /* Уменьшаем размер иконок социальных сетей */
+                width: 8vw; /* Изменяем размер иконок для маленьких экранов */
+                margin: 0 1vw; /* Изменяем отступы между иконками для маленьких экранов */
             }
         }
     </style>
