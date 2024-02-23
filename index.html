@@ -8,24 +8,32 @@
     <style>
         /* Общие стили */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #f8f9fa;
+            color: #333;
         }
         header {
-            background-color: #ffec80;
-            color: #000;
+            background-color: #2a75bb;
+            color: #fff;
             padding: 20px;
             text-align: center;
             position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
         .left-image, .right-image {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 300px;
+            width: 200px;
             height: auto;
+            animation: float 5s infinite alternate;
         }
         .left-image {
             left: 10px;
@@ -34,7 +42,7 @@
             right: 10px;
         }
         nav {
-            background-color: #fff6bf;
+            background-color: #2a75bb;
             text-align: center;
             padding: 10px 0;
         }
@@ -43,30 +51,35 @@
             background-color: transparent;
             font-size: 16px;
             cursor: pointer;
+            color: #fff;
         }
         .container {
             max-width: 800px;
             margin: 20px auto;
-            padding: 0 20px;
+            padding: 20px;
             background-color: #fff;
             border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         section {
-            padding: 20px 0;
+            padding: 30px 0; /* Увеличим отступы для разделов */
             border-bottom: 1px solid #ccc;
         }
         h2 {
-            color: #ff7846;
+            color: #2a75bb;
+            font-size: 2rem; /* Увеличим размер заголовков */
+            margin-bottom: 20px; /* Добавим немного пространства после заголовков */
+            animation: fadeIn 1s ease-in-out; /* Добавим анимацию появления */
         }
         p {
             color: #666;
+            font-size: 1.1rem; /* Увеличим размер текста */
         }
         footer {
-            background-color: #ffec80;
-            color: #000;
+            background-color: #2a75bb;
+            color: #fff;
             text-align: center;
             padding: 20px;
-            width: 100%;
         }
         .social-icons {
             margin-top: 20px;
@@ -76,6 +89,10 @@
             width: 30px;
             height: auto;
             margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .social-icons img:hover {
+            transform: scale(1.2);
         }
 
         /* Медиа-запрос для мобильных устройств */
@@ -93,13 +110,36 @@
                 padding: 0 10px; /* Уменьшаем внутренние отступы контейнера */
             }
             h2 {
-                font-size: 18px; /* Уменьшаем размер заголовков */
+                font-size: 1.8rem; /* Уменьшаем размер заголовков */
             }
             p {
-                font-size: 14px; /* Уменьшаем размер текста */
+                font-size: 1rem; /* Уменьшаем размер текста */
             }
             .social-icons img {
                 width: 20px; /* Уменьшаем размер иконок социальных сетей */
+            }
+        }
+
+        /* Анимация для изображений */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Анимация для заголовков */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
             }
         }
     </style>
@@ -127,7 +167,7 @@
                 <li id="totalSupply">Total Supply: 1,000,000,000 Chlenix ($XYI)</li>
                 <li id="symbol">Symbol: $XYI</li>
                 <li id="decimals">Decimals: 18</li>
-		<li id="decimals1">Token contract address: 0xA71Fc85908555B515CDCaB1a5602848515bdb3c5 in the BNB Smart Chain (Bep20) network</li>
+                <li id="decimals1">Token contract address: 0xA71Fc85908555B515CDCaB1a5602848515bdb3c5 in the BNB Smart Chain (Bep20) network</li>
             </ul>
         </section>
         <section id="rewards">
